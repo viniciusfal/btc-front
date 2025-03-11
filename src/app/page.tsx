@@ -26,7 +26,7 @@ export default function Home() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("https://btc-api-6bna.onrender.com/upload", {
+      const response = await fetch("https://btc-api-production.up.railway.app/upload", {
         method: "POST",
         body: formData,
       });
