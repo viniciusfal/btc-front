@@ -26,7 +26,7 @@ export default function Home() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("btc-api-production.up.railway.app/upload", {
+      const response = await fetch("https://btc-api-production.up.railway.app/upload", {
         method: "POST",
         body: formData,
       });
@@ -54,13 +54,13 @@ export default function Home() {
   return (
     <div className="bg-gradient-to-br from-zinc-50 to-zinc-100 min-h-screen relative">
       <header className="absolute left-6 top-6 z-10">
-        <Image 
-          src={amazoniaImg} 
-          alt="Amazonia Inter" 
-          className="w-[140px] drop-shadow-sm transition-opacity hover:opacity-90" 
+        <Image
+          src={amazoniaImg}
+          alt="Amazonia Inter"
+          className="w-[140px] drop-shadow-sm transition-opacity hover:opacity-90"
         />
       </header>
-      
+
       <div className="flex flex-col items-center justify-center min-h-screen px-4 pb-24">
         <div className="bg-zinc-50 rounded-2xl shadow-lg shadow-zinc-200/50 p-8 md:p-12 w-full max-w-md border border-zinc-100">
           <div className="flex flex-col items-center gap-8">
@@ -72,9 +72,9 @@ export default function Home() {
                 Selecione um arquivo para processar e gerar os dados de desempenho operacional
               </p>
             </div>
-            
+
             <div className="w-full">
-              <label 
+              <label
                 htmlFor="file-input"
                 className="flex items-center gap-3 border-2 border-dashed border-zinc-300 rounded-xl p-4 cursor-pointer transition-all duration-300 hover:border-emerald-400 hover:bg-emerald-50/30 group"
               >
@@ -107,7 +107,7 @@ export default function Home() {
                 </div>
               </label>
             </div>
-            
+
             <button
               onClick={handleUpload}
               disabled={loading || !file}
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+
       <footer className="bg-zinc-900/95 backdrop-blur-sm w-full text-zinc-400 fixed bottom-0 py-5 rounded-t-2xl border-t border-zinc-800 text-center text-xs font-medium">
         Copyright &copy; {new Date().getFullYear()} Amazônia Inter - Desenvolvido por{" "}
         <span className="text-zinc-300 font-semibold">Vinicius Silva</span>
